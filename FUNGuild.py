@@ -111,8 +111,8 @@ def taxa_parser(otu, fmt, column, classifier):
         current_otu = record[0]
         if taxa_format == 'unite':
             taxa_string = record[1][taxa_column].split('|')
-            if len(taxa_string) == 6: # The string has the UNITE label
-               taxa_string = taxa_string[5].split(';')
+            if len(taxa_string) == 5: # The string has the UNITE label
+               taxa_string = taxa_string[4].split(';')
             elif len(taxa_string) == 1:
                 taxa_string = taxa_string[0].split(';')
             taxa_string = [i[3:] for i in taxa_string] # Remove the k__, f__, g__ prefix
